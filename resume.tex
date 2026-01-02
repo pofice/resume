@@ -13,8 +13,8 @@
 
 % personal data
 \name{庞}{朝阳}
-\title{全栈开发工程师 / AI 算法应用工程师}                               % optional, remove / comment the line if not wanted
-\address{广西外国语学院}{计算机科学与技术}{2025届本科} % optional, remove / comment the line if not wanted
+\title{全栈开发工程师 / AI 应用工程师}                               % optional, remove / comment the line if not wanted
+\address{广西外国语学院}{计算机科学与技术}{2026届本科} % optional, remove / comment the line if not wanted
 \phone[mobile]{18977554553}                   % optional, remove / comment the line if not wanted
 \email{2380691181@qq.com}                               % optional, remove / comment the line if not wanted
 \social[github]{pofice}                              % optional, remove / comment the line if not wanted
@@ -26,38 +26,41 @@
 \makecvtitle
 
 \section{教育背景}
-\cventry{2021--2025}{本科}{广西外国语学院}{计算机科学与技术}{}{}
+\cventry{2022--2026}{本科}{广西外国语学院}{计算机科学与技术}{}{}
 
 \section{专业技能}
-\cvitem{编程语言}{Python (精通), TypeScript/JavaScript, C, SQL}
+\cvitem{编程语言}{Python (熟练使用), TypeScript/JavaScript, C, SQL}
 \cvitem{后端框架}{FastAPI, Flask, Celery, RabbitMQ, Redis, PostgreSQL}
 \cvitem{前端技术}{Next.js, React, Vue 3, Tailwind CSS, Streamlit}
 \cvitem{AI 领域}{LLM 应用开发 (Dify, Coze, n8n), ASR (FunASR), TTS (Edge-TTS, Index-TTS, VieNeu-TTS), 视频生成 (Sora2 API), FFmpeg 音视频处理}
 \cvitem{工具/部署}{Docker, Linux (Ubuntu), Git, CI/CD}
 
 \section{创业与工作经历}
-\cventry{2024.06--至今}{技术负责人 / 联合创始人}{广西映乾智能科技有限公司}{南宁}{}{
+\cventry{2025.09--至今}{技术负责人 / 联合创始人}{广西映乾智能科技有限公司}{南宁}{}{
 \begin{itemize}
     \item \textbf{映乾 AIGC 集成平台}: 主导研发国内首个专注于中国-东盟跨境场景的全链路 AIGC 平台，整合短剧生成、翻译配音、智能客服及离线语音四大引擎。
     \item \textbf{AI 短剧生成工作流 (ai-short)}: 构建基于 Sora2 API 的全自动生成系统。利用 Dify 实现流式剧本增强与分段计划；设计角色镜头截取机制，通过 character\_url 保持多段视频间的角色一致性；采用 Celery + Redis 实现长耗时视频生成的异步轮询与状态实时刷新。
-    \item \textbf{AI 短剧翻译配音系统 (ASEAN-Workflow)}: 开发视频翻译配音闭环。集成 Demucs v4 (htdemucs\_ft) 实现高质量人声与背景音分离；利用 Edge-TTS 与自定义 TTS 引擎支持音色克隆；实现基于 OCR 的智能打码技术，自动识别原字幕区域并叠加多语言翻译字幕。
-    \item \textbf{技术架构}: 采用微服务架构，集成 FastAPI, Vue 3, PostgreSQL, Docker, FFmpeg 等技术栈。
+    \item \textbf{AI 短剧翻译配音系统 (ASEAN-Workflow)}: 开发视频翻译配音闭环。集成 Demucs v4 (htdemucs\_ft) 实现高质量人声与背景音分离；利用 VieNeu-TTS 与 Index-TTS 引擎支持音色克隆；实现基于 OCR 硬字幕识别与基于 FunASR 的语音识别字幕，原字幕区域打码处理并叠加多语言翻译字幕。
+    \item \textbf{技术架构}: 采用微服务架构，集成 FastAPI, Vue3, PostgreSQL, Docker, FFmpeg 等技术栈。
 \end{itemize}}
 
 \cventry{2025.07--2025.09}{全栈工程师 (实习)}{北京顺为知一科技有限公司}{北京}{}{
 \begin{itemize}
-    \item \textbf{微信智能销售助手一体化平台}: 主导开发基于 FastAPI 与 Next.js 的企业级 AI 销售助手。
-    \item 实现了多微信账号管理、自动化消息处理、群发与客户标签管理。
-    \item 集成 Dify、Coze、n8n 等 AI 工作流，实现智能对话、内容摘要及长短期记忆功能。
-    \item 采用 RabbitMQ 与 WebSocket 构建高性能实时通信系统，支持高并发消息处理。
+    \item \textbf{微信智能销售助手一体化平台}: 作为技术负责人主导开发基于 FastAPI 与 Next.js 的企业级 AI 销售助手，支持微服务架构与模块化扩展。
+    \item \textbf{多账号与自动化管理}: 实现了多微信账号的统一接入与管理，支持自动化消息处理、群发任务及客户标签系统；设计了权限与配额控制机制，保障企业级运营的安全与合规。
+    \item \textbf{AI 与工作流集成}: 无缝对接 Dify、Coze、n8n 等 AI 平台，实现智能对话、内容摘要、群聊/私聊长短期记忆及自动标签功能；集成 n8n 工作流实现多系统联动与自动化任务调度。
+    \item \textbf{高性能通信与同步}: 采用 RabbitMQ 消息队列与 WebSocket 协议构建实时通信系统，支持高并发消息推送与多渠道数据同步，确保系统在高负载下的稳定性。
+    \item \textbf{数据安全与审计}: 建立了完善的日志审计与数据隔离机制，通过权限认证体系确保企业敏感数据的安全性。
+    \item \textbf{技术栈}: Python, FastAPI, Next.js, TypeScript, RabbitMQ, Dify, n8n, PostgreSQL, Docker, WebSocket.
 \end{itemize}}
 
 \section{项目经验}
 \cventry{2024.09--2024.12}{独立开发}{Linux 离线语音输入法 (voice-input-method)}{开源项目}{}{
 \begin{itemize}
     \item 基于 PyQt5 与 FunASR-ONNX 引擎开发跨平台离线语音输入工具，响应时间 < 1s。
-    \item 实现热词增强机制，通过加载自定义热词库提升人名、专业术语识别准确率 90\% 以上。
+    \item 实现热词增强机制，通过加载自定义热词库提升人名、专业术语识别准确率 90\% 以上。并且可以实现拼音输入法热词联动，说出输入过的人名可以准确识别。
     \item 采用多线程架构分离录音、识别与 UI 逻辑，确保在低功耗设备上的流畅运行。
+    \item 支持多种桌面平台 (Windows, Linux)，并提供多种显示服务器协议 (X11, Wayland) 的兼容性。
 \end{itemize}}
 
 \cventry{2024.07--2025.01}{技术负责人}{Minecraft 高铁 MOD 开发}{团队项目}{}{
