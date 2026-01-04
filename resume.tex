@@ -12,7 +12,7 @@
 \usepackage[scale=0.85]{geometry}
 
 % personal data
-\name{庞}{朝阳}
+\name{}{庞朝阳}
 \title{全栈开发工程师 / AI 应用工程师}                               % optional, remove / comment the line if not wanted
 \address{广西外国语学院}{计算机科学与技术}{2026届本科} % optional, remove / comment the line if not wanted
 \phone[mobile]{18977554553}                   % optional, remove / comment the line if not wanted
@@ -38,9 +38,11 @@
 \section{创业与工作经历}
 \cventry{2025.09--至今}{技术负责人 / 联合创始人}{广西映乾智能科技有限公司}{南宁}{}{
 \begin{itemize}
-    \item \textbf{映乾 AIGC 集成平台}: 主导研发国内首个专注于中国-东盟跨境场景的全链路 AIGC 平台，整合短剧生成、翻译配音、智能客服及离线语音四大引擎。
-    \item \textbf{AI 短剧生成工作流 (ai-short)}: 构建基于 Sora2 API 的全自动生成系统。利用 Dify 实现流式剧本增强与分段计划；设计角色镜头截取机制，通过 character\_url 保持多段视频间的角色一致性；采用 Celery + Redis 实现长耗时视频生成的异步轮询与状态实时刷新。
-    \item \textbf{AI 短剧翻译配音系统 (ASEAN-Workflow)}: 开发视频翻译配音闭环。集成 Demucs v4 (htdemucs\_ft) 实现高质量人声与背景音分离；利用 VieNeu-TTS 与 Index-TTS 引擎支持音色克隆；实现基于 OCR 硬字幕识别与基于 FunASR 的语音识别字幕，原字幕区域打码处理并叠加多语言翻译字幕。
+    \item \textbf{映乾 AIGC 集成平台}: 主导研发专注于中国-东盟跨境场景的全链路 AIGC 平台，整合短剧生成、翻译配音、智能客服及离线语音四大引擎。
+    \item \textbf{AI 短剧生成工作流 (ai-short)}: 构建基于 Sora2 API 的全自动生成系统。利用 Dify 实现流式剧本增强与分段计划；设计角色镜头截取机制，通过 character\_url 保持多段视频间的角色一致性；采用 Celery + Redis 实现长耗时视频生成的异步生成与状态实时刷新。\\
+    操作流程: 用户输入创意 → AI生成剧本与分镜 → 首段视频生成 → 拖动窗口截取角色 → 剩余分段视频生成 → 可调片段 → 合并成片
+    \item \textbf{AI 短剧翻译配音系统 (ASEAN-Workflow)}: 开发视频翻译配音闭环。集成 Demucs v4 (htdemucs\_ft) 实现高质量人声与背景音分离；利用 VieNeu-TTS 与 Index-TTS 引擎支持音色克隆；实现基于 OCR 硬字幕识别与基于 FunASR 的语音识别字幕，原字幕区域打码处理并叠加多语言翻译字幕。\\
+    操作流程: 用户上传视频 → 提取字幕 → 校对字幕内容及选区 → 选择说话人 → 处理视频 → 下载成片
     \item \textbf{技术架构}: 采用微服务架构，集成 FastAPI, Vue3, PostgreSQL, Docker, FFmpeg 等技术栈。
 \end{itemize}}
 
@@ -81,6 +83,6 @@
 \cvitem{2025.06}{第十二届“挑战杯”广西大学生课外学术科技作品竞赛 一等奖 (队长)}
 \cvitem{2023.12}{“传智杯”全国 IT 技能大赛 省一等奖 (云计算大数据挑战赛)}
 \cvitem{2023.10}{全国高校计算机能力挑战赛 华南赛区一等奖 (C 语言)}
-\cvitem{2023.06}{大学生创新创业项目 国家级立项 (负责人/成员)}
+\cvitem{2023.06}{大学生创新创业项目 国家级立项 (负责人)}
 
 \end{document}
