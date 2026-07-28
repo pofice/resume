@@ -1,23 +1,23 @@
 \documentclass[11pt,a4paper,sans]{moderncv}
 
 % moderncv themes
-\moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
-\moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\moderncvstyle{classic}
+\moderncvcolor{blue}
 
 % character encoding
 \usepackage[utf8]{inputenc}
 \usepackage{xeCJK}
 
 % adjust the page margins
-\usepackage[scale=0.85]{geometry}
+\usepackage[scale=0.88]{geometry}
 
 % personal data
 \name{}{庞朝阳}
-\title{全栈开发工程师 / AI 应用工程师}                               % optional, remove / comment the line if not wanted
-\address{广西外国语学院}{计算机科学与技术}{2026届本科} % optional, remove / comment the line if not wanted
-\phone[mobile]{18977554553}                   % optional, remove / comment the line if not wanted
-\email{2380691181@qq.com}                               % optional, remove / comment the line if not wanted
-\social[github]{pofice}                              % optional, remove / comment the line if not wanted
+\title{AI 应用开发工程师}
+\address{广西外国语学院}{计算机科学与技术}{2026 届本科}
+\phone[mobile]{18977554553}
+\email{2380691181@qq.com}
+\social[github]{pofice}
 
 %----------------------------------------------------------------------------------
 %            content
@@ -25,64 +25,69 @@
 \begin{document}
 \makecvtitle
 
+\section{个人简介}
+\cvitem{}{2026 届 CS 本科，专注 AI Native 全栈工程——不只使用 AI 工具，更构建 AI Agent 可调用的 Skill 与决策规范（Claude Code Skills 开发者）。在雷石（KTV 行业龙头）负责三端开发并将 AI 深度融入日常工作流，主导过跨境短剧 AIGC 系统技术架构。}
+
 \section{教育背景}
 \cventry{2022--2026}{本科}{广西外国语学院}{计算机科学与技术}{}{}
 
 \section{专业技能}
-\cvitem{编程语言}{Python (熟练使用), TypeScript/JavaScript, C, SQL}
-\cvitem{后端框架}{FastAPI, Flask, Celery, RabbitMQ, Redis, PostgreSQL}
-\cvitem{前端技术}{Next.js, React, Vue 3, Tailwind CSS, Streamlit}
-\cvitem{AI 领域}{LLM 应用开发 (Dify, Coze, n8n), ASR (FunASR), TTS (Edge-TTS, Index-TTS, VieNeu-TTS), 视频生成 (Sora2 API), FFmpeg 音视频处理}
-\cvitem{工具/部署}{Docker, Linux (Ubuntu), Git, CI/CD}
+\cvitem{主力}{Python, TypeScript / JavaScript, Vue 3}
+\cvitem{熟悉}{Go (Gin / GORM), FastAPI, uni-app}
+\cvitem{AI 工具}{Claude Code (含自研 Skills 与 CLAUDE.md 规范), Dify, Coze, n8n; Prompt 工程, RAG, AI Agent 工作流设计}
 
-\section{创业与工作经历}
-\cventry{2025.09--至今}{技术负责人 / 联合创始人}{广西映乾智能科技有限公司}{南宁}{}{
+\section{工作经历}
+\cventry{2026.01--至今}{AI 应用开发工程师（实习）}{北京雷石天地电子技术股份有限公司 / Anya 团队}{北京}{}{
 \begin{itemize}
-    \item \textbf{映乾 AIGC 集成平台}: 主导开发专注于中国-东盟跨境场景的短剧 AIGC 平台，整合短剧生成、翻译配音、智能客服。
-    \item \textbf{AI 短剧生成工作流 (ai-short)}: 构建基于 Sora2 API 的全自动生成系统。利用 Dify 实现流式剧本增强与分段计划；设计角色镜头截取机制，通过 character\_url 保持多段视频间的角色一致性；采用 Celery + Redis 实现长耗时视频生成的异步生成与状态实时刷新。\\
-    操作流程: 用户输入创意 → AI生成剧本与分镜 → 首段视频生成 → 拖动窗口截取角色 → 剩余分段视频生成 → 可调片段 → 合并成片
-    \item \textbf{AI 短剧翻译配音系统 (ASEAN-Workflow)}: 开发视频翻译配音闭环。集成 Demucs v4 (htdemucs\_ft) 实现高质量人声与背景音分离；利用 VieNeu-TTS 与 Index-TTS 引擎支持音色克隆；实现基于 OCR 硬字幕识别与基于 FunASR 的语音识别字幕，原字幕区域打码处理并叠加多语言翻译字幕。\\
-    操作流程: 用户上传视频 → 提取字幕 → 校对字幕内容及选区 → 选择说话人 → 处理视频 → 下载成片
-    \item \textbf{技术架构}: 采用微服务架构，集成 FastAPI, Vue3, PostgreSQL, Docker, FFmpeg 等技术栈。
+    \item 在 7 人技术团队中负责客用小程序（uni-app + Vue3）、掌柜端管理后台（Vue3）和 Go 后端服务（Gin + GORM）三端开发，交付自助预约、扫码开台、卡券核销、超时自动关台等完整业务闭环。
+    \item 攻克跨端数据一致性问题（预约时段冲突、session 状态漂移），将问题抽象为状态机模型，在领域服务层统一修复，方案复用于后续同类场景。
+    \item 从 Python 主栈切入 Go 工程化开发，两周内完成 PO/VO 设计、AutoMigrate、v3 路由注册等完整开发链路，通过团队代码评审。
+    \item 日常开发全面接入 Claude Code：为项目编写 CLAUDE.md 规范引导 AI 理解代码库上下文，代码生成 + Review + 测试覆盖由人机协作完成。
+    \item 从 0 到 1 交付 VOD 自动退款 Agent（微信消息采集 → OCR 提取订单号 → CMS 接口对接 → 飞书告警），已投产替代人工退款流程；工程化踩坑沉淀：并发锁防双倍退款、已退款订单幂等判断、异常容错重试。
 \end{itemize}}
 
-\cventry{2025.07--2025.09}{全栈工程师 (实习)}{北京顺为知一科技有限公司}{北京}{}{
+\cventry{2025.07--2025.09}{全栈工程师（实习）}{北京顺为知一科技有限公司}{北京}{}{
 \begin{itemize}
-    \item \textbf{微信智能销售助手一体化平台}: 作为技术负责人主导开发基于 FastAPI 与 Next.js 的企业级 AI 销售助手，支持微服务架构与模块化扩展。
-    \item \textbf{多账号与自动化管理}: 实现了多微信账号的统一接入与管理，支持自动化消息处理、群发任务及客户标签系统；设计了权限与配额控制机制，保障企业级运营的安全与合规。
-    \item \textbf{AI 与工作流集成}: 无缝对接 Dify、Coze、n8n 等 AI 平台，实现智能对话、内容摘要、群聊/私聊长短期记忆及自动标签功能；集成 n8n 工作流实现多系统联动与自动化任务调度。
-    \item \textbf{高性能通信与同步}: 采用 RabbitMQ 消息队列与 WebSocket 协议构建实时通信系统，支持高并发消息推送与多渠道数据同步，确保系统在高负载下的稳定性。
-    \item \textbf{数据安全与审计}: 建立了完善的日志审计与数据隔离机制，通过权限认证体系确保企业敏感数据的安全性。
-    \item \textbf{技术栈}: Python, FastAPI, Next.js, TypeScript, RabbitMQ, Dify, n8n, PostgreSQL, Docker, WebSocket.
+    \item 负责企业级微信销售助手平台全栈开发（FastAPI + Next.js），支持多微信账号统一接入、自动化消息处理与客户标签体系；通信层基于开源 wxauto 库扩展开发。
+    \item 将 AI 能力（智能对话、内容摘要、自动标签）下沉到 Dify / Coze / n8n 工作流，后端仅保留调度与审计，使运营侧可自主迭代 Prompt 而无需后端发版。
+    \item RabbitMQ + WebSocket 构建实时消息推送链路，支撑多账号并发场景。
 \end{itemize}}
 
-\section{项目经验}
-\cventry{2024.09--2024.12}{独立开发}{Linux 离线语音输入法 (voice-input-method)}{开源项目}{}{
+\section{开源项目}
+\cventry{2024.09--至今}{voice-input-method — Linux 离线语音输入法}{\textnormal{GitHub \textbf{29} stars \textperiodcentered{} 9 forks}}{Python}{}{
 \begin{itemize}
-    \item 基于 PyQt5 与 FunASR-ONNX 引擎开发跨平台离线语音输入工具，响应时间 < 1s。
-    \item 实现热词增强机制，通过加载自定义热词库提升人名、专业术语识别准确率 90\% 以上。并且可以实现拼音输入法热词联动，说出输入过的人名可以准确识别。
-    \item 采用多线程架构分离录音、识别与 UI 逻辑，确保在低功耗设备上的流畅运行。
-    \item 支持多种桌面平台 (Windows, Linux)，并提供多种显示服务器协议 (X11, Wayland) 的兼容性。
+    \item 基于 FunASR / SherpaOnnx + PySide6 的跨平台离线语音输入工具，响应延迟 \textless{} 1s，支持 X11 / Wayland 双协议与运行时麦克风切换。
+    \item Protocol-based 依赖注入架构（GUI → factory → engine → protocols → implementations），核心逻辑不依赖硬件即可 mock 测试。配套 CLAUDE.md 规范使 AI Agent 可直接接管代码库——新贡献者（人或 AI）无需口头说明即可上手开发。
 \end{itemize}}
 
-\cventry{2024.07--2025.01}{技术负责人}{Minecraft 高铁 MOD 开发}{团队项目}{}{
+\cventry{2026.02--至今}{minecraft-builder — Claude Code Skill（为 AI Agent 造工具）}{\textnormal{GitHub \textbf{7} stars}}{Python}{}{
 \begin{itemize}
-    \item 开发高性能轨道交通模组，累计下载量 10,000+，实现 200km/h 高速列车物理模拟。
-    \item \textbf{性能优化}: 采用时间片轮转调度算法优化多列车运动计算，卡顿减少 90\%；设计动态区块预加载机制，降低高速行驶时的加载延迟 70\%。
+    \item 设计理念：不是"用 AI 写代码"，而是"为 AI 设计可安全调用的工具"。基于 amulet-core 封装地形、建筑、家具、预设四模块，将 LLM 高频幻觉点（块名拼写、路径解析、存档损坏）内置到防御层，使 AI Agent 可零人工干预完成建筑生成。配套 CLAUDE.md + SKILL.md 规范，CI 覆盖率门禁，15+ 测试文件。
 \end{itemize}}
 
-\section{科研与学术项目}
-\cventry{2023.06--2024.06}{项目负责人}{基于异构计算与虚拟化技术的高性能计算平台}{国家级大创项目}{}{
+\section{项目经历}
+\cventry{2026.03--至今}{观澜 — 黄金交易分析 Claude Code Skill}{\textnormal{412 行结构化规范 \textperiodcentered{} AI Agent 决策工程化}}{}{}{
 \begin{itemize}
-    \item 设计并实现了一个多用途 AI 计算平台，利用 Hyper-V/KVM 虚拟化技术实现资源隔离。
-    \item 探索了计算资源分配算法，优化了复杂计算任务的执行效率。
+    \item 核心命题：如何让 LLM 在高风险领域（金融）输出可信结论？设计四层递进分析框架（周期定阶段 → 宏观定方向 → 中观定节奏 → 微观定点位），将交易专家认知系统化为 AI Agent 可执行的决策规范，附优先级铁律：上层逻辑 > 下层信号，矛盾时必须解释数据依据。
+    \item 工程化约束 AI 幻觉：制定"数据锚点原则"——每个结论必须挂钩数据源 + 具体值 + 时间戳（三位一体），禁止无数据支撑的判断性形容词；设计八因子量化评分表（$-$16 到 $+$16）集成 FRED / yfinance / CFTC COT 等多源数据，并构建中观六维信号交叉验证矩阵（COMEX 持仓 + ETF 流向 + 央行购金 + 交割博弈 + 波动率 + 期权），用组合模式替代单一信号判断。
+\end{itemize}}
+
+\cventry{2023--2024}{网易我的世界高铁模组}{\textnormal{累计下载 \textbf{10,000+}}}{python}{}{
+\begin{itemize}
+    \item 与同学组队开发网易我的世界高铁模组，负责核心功能开发与模组架构设计；发布至网易我的世界模组平台后持续维护迭代，累计下载量突破 10,000 次，累计营收突破 100,000 元。
+\end{itemize}}
+
+\cventry{2025.09--2026.01}{技术负责人 — 跨境短剧 AIGC 系统}{映乾（3 人创业团队，负责全部技术架构与 AI 工作流）}{}{}{
+\begin{itemize}
+    \item 主导技术选型与系统架构设计：Sora2 API + Dify 流式剧本编排 + Celery + Redis 异步任务链路（FastAPI + Vue3 + PostgreSQL + Docker）；设计角色镜头截取机制，解决多段 AI 生成视频的角色一致性问题。
+    \item 独立搭建翻译配音全自动链路：Demucs v4 人声分离 → VieNeu-TTS / Index-TTS 音色克隆 → OCR / FunASR 双路字幕识别，实现上传到成片全流程无人工干预，单集处理耗时从人工 4h+ 降至自动 20min。
 \end{itemize}}
 
 \section{竞赛与荣誉}
-\cvitem{2025.10}{第十届中国国际大学生创新大赛 区级铜奖 (队长)}
-\cvitem{2025.06}{第十二届“挑战杯”广西大学生课外学术科技作品竞赛 一等奖 (队长)}
-\cvitem{2023.12}{“传智杯”全国 IT 技能大赛 省一等奖 (云计算大数据挑战赛)}
-\cvitem{2023.10}{全国高校计算机能力挑战赛 华南赛区一等奖 (C 语言)}
-\cvitem{2023.06}{大学生创新创业项目 国家级立项 (负责人)}
+\cvitem{2025.10}{第十届中国国际大学生创新大赛 区级铜奖（队长）}
+\cvitem{2025.06}{第十二届"挑战杯"广西大学生课外学术科技作品竞赛 一等奖（队长）}
+\cvitem{2023.12}{"传智杯"全国 IT 技能大赛 省一等奖（云计算大数据挑战赛）}
+\cvitem{2023.10}{全国高校计算机能力挑战赛 华南赛区一等奖（C 语言）}
+\cvitem{2023.06}{大学生创新创业项目 国家级立项（负责人）}
 
 \end{document}
