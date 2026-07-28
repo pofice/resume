@@ -39,7 +39,7 @@
 \section{工作经历}
 \cventry{2026.01--至今}{AI 应用开发工程师（实习转正）}{北京雷石天地电子技术股份有限公司 / AI 团队}{北京}{}{
 \begin{itemize}
-    \item 主力开发企业级 AI 客服 Agent 平台「小雷」（TypeScript / Node.js + Fastify）：微信 + 飞书双渠道消息网关（RabbitMQ + WebSocket 长连接），Orchestrator 调度可插拔多 Agent 后端（Claude Code / Kimi / OpenCode SDK），通过 MCP 挂载业务工具，配套知识库系统与按群聊作用域的知识隔离；已投产承接 VOD 产品线技术支持咨询。
+    \item 主力开发企业级 AI 客服 Agent 平台「小雷」（TypeScript / Node.js + Fastify）：微信 + 飞书双渠道消息网关（RabbitMQ + WebSocket 长连接），Orchestrator 调度可插拔多 Agent 后端（Claude Code / Kimi / OpenCode SDK），通过 MCP 挂载业务工具，配套知识库系统（100+ 篇文档）与按群聊作用域的知识隔离；已投产承接 VOD 产品线技术支持——持续运行 4 个多月，覆盖 24 个业务群 / 300+ 用户，累计处理咨询消息 2.8 万+ 条、自动应答近 5,000 条（近 30 天日均入站 400+），全链路审计留痕。
     \item 从 0 到 1 交付 VOD 自动退款 Agent（微信消息采集 → OCR 提取订单号 → CMS 接口对接 → 飞书告警），已投产替代人工退款流程；工程化踩坑沉淀：并发锁防双倍退款、已退款订单幂等判断、异常容错重试。
     \item 深度参与 KTV ERP 多端产品矩阵开发——客用小程序、掌柜端小程序（uni-app + Vue3）为主力，兼及收银端 / 包厢 Pad、财务报表系统、SaaS 管理后台（Vue3）与 Go 后端，交付自助预约、扫码开台、卡券核销、超时自动关台等完整业务闭环；攻克跨端数据一致性问题（预约时段冲突、session 状态漂移），抽象为状态机模型在领域服务层统一修复。
     \item 深入 Go DDD 四层架构后端（规则引擎 / 流程引擎），承担订单、预约、会员等核心交易链路的常规迭代（270+ commits），配套单元测试与集成测试。
