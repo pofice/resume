@@ -79,10 +79,10 @@
     \item \textbf{主导技术选型与系统架构设计：}Sora2 API + Dify 流式剧本编排 + Celery + Redis 异步任务链路（FastAPI + Vue3 + PostgreSQL + Docker）；设计角色镜头截取机制，解决多段 AI 生成视频的角色一致性问题。
 \end{itemize}}
 
-\cventry{2026.03--至今}{观澜 — 黄金交易分析 Claude Code Skill}{\textnormal{412 行结构化规范 \textperiodcentered{} AI Agent 决策工程化}}{}{}{
+\cventry{2026.03--至今}{观澜 — 面向高风险领域的 LLM 输出约束规范}{\textnormal{Claude Code Skill \textperiodcentered{} 411 行 \textperiodcentered{} 以金融分析为载体}}{}{}{
 \begin{itemize}
-    \item \textbf{核心命题：如何让 LLM 在高风险领域（金融）输出可信结论？}设计四层递进分析框架（周期定阶段 → 宏观定方向 → 中观定节奏 → 微观定点位），将交易专家认知系统化为 AI Agent 可执行的决策规范，附优先级铁律：上层逻辑 \textgreater{} 下层信号，矛盾时必须解释数据依据。
-    \item \textbf{以工程化手段约束 AI 幻觉：}制定"数据锚点原则"——每个结论必须挂钩数据源 + 具体值 + 时间戳（三位一体），禁止无数据支撑的判断性形容词；设计八因子量化评分表（$-$16 到 $+$16）集成 FRED / yfinance / CFTC COT 等多源数据，并构建中观六维信号交叉验证矩阵（COMEX 持仓 + ETF 流向 + 央行购金 + 交割博弈 + 波动率 + 期权）。
+    \item \textbf{核心命题：如何让 LLM 在容错率极低的领域输出可审计、可追责的结论。}三层反幻觉机制：\textbf{数据锚点铁律}——每个判断性结论必须挂钩（数据源, 具体值, 时间戳），显式禁用"显著上升""市场恐慌"等无锚点形容词；\textbf{能力边界白名单}——明确声明"做什么 / 不做什么"，越界即拒答；\textbf{不确定性降级策略}——数据缺失标注缺失项而非猜测，多解场景给出首选 + 替代 + 各自的验证条件，API 失败直接报"不可用"而非用替代数据伪装。
+    \item \textbf{领域知识的规范化工程：}四层递进分析框架（周期 → 宏观 → 中观 → 微观）附优先级铁律——上层逻辑 \textgreater{} 下层信号，矛盾时必须解释数据依据；八因子量化评分表（$-$16 到 $+$16）绑定 FRED / yfinance 具体数据序列，六维信号交叉验证矩阵（COMEX 持仓 + ETF 流向 + 央行购金 + 交割博弈 + 波动率 + 期权）以组合模式替代单一信号判断。
 \end{itemize}}
 
 \cventry{2023--2024}{网易我的世界高铁模组}{\textnormal{累计下载 \textbf{10,000+} \textperiodcentered{} 累计营收 \textbf{100,000+} 元}}{Python}{}{
