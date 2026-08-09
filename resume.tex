@@ -26,62 +26,68 @@
 \makecvtitle
 
 \section{个人简介}
-\cvitem{}{2026 届 CS 本科毕业，专注 AI Native 全栈工程——不只使用 AI 工具，更构建 AI Agent 可调用的工具、运行时与决策规范。现就职于雷石（KTV 行业龙头）AI 团队（小米总部驻场），主力开发 AI 客服 Agent 平台与 ERP 多端产品矩阵，另主导过跨境短剧 AIGC 系统技术架构。}
-
-\section{教育背景}
-\cventry{2022--2026}{本科}{广西外国语学院}{计算机科学与技术}{}{}
+\cvitem{}{2026 届 CS 本科，专注 AI Native 全栈工程——不只使用 AI 工具，更构建 AI Agent 可调用的工具、运行时与决策规范。在雷石（KTV 行业龙头，小米总部驻场）主力开发 AI 客服 Agent 平台「小雷」，\textbf{投产 4 个多月，全自动处理退款 3,090 笔、拦截重复退款 217 次}；另主导跨境短剧 AIGC 系统技术架构，持有发明专利 1 项（独立发明人，已受理）。求职方向：AI Agent / LLM 应用开发，北京。}
 
 \section{专业技能}
+\cvitem{AI 工程}{多 Agent SDK 集成与 Agent Runtime, MCP, RAG, Prompt 工程, Claude Code（自研 Skills 与 CLAUDE.md 规范）, Dify / Coze / n8n}
 \cvitem{主力}{TypeScript / Node.js, Python, Vue 3}
-\cvitem{熟悉}{Go (Gin / GORM / DDD 四层), FastAPI, uni-app}
-\cvitem{AI 工程}{Claude Code（自研 Skills 与 CLAUDE.md 规范）, MCP, 多 Agent SDK 集成与 Agent Runtime, RAG, Prompt 工程, Dify / Coze / n8n}
+\cvitem{熟悉}{Go (Gin / GORM / DDD 四层), FastAPI, uni-app, Playwright, RabbitMQ}
+
+\section{核心项目}
+\cventry{2026.02--2026.08}{企业级 AI 客服 Agent 平台「小雷」}{\textnormal{雷石 AI 团队 \textperiodcentered{} 主力开发 \textperiodcentered{} 已投产}}{TypeScript / Node.js}{}{
+\begin{itemize}
+    \item \textbf{业务结果：投产 4 个多月，全自动处理退款 3,090 笔，幂等机制拦截重复退款 217 次（直接避免资损）。}承接 VOD 产品线技术支持，覆盖 24 个业务群 / 304 名用户；累计处理入站咨询 2.4 万+ 条（近 30 天日均入站 400+）、自动应答 5,100+ 条，覆盖退款处理与 KTV ERP / VOD 技术答疑。
+    \item \textbf{低打扰设计：}群聊仅在被显式 @ 时响应，配合群白名单二次收敛——新架构上线后 23 天内 9,264 次触发评估，仅 4.5\% 产生应答；全链路留痕 4.8 万+ 审计事件，每次决策可追溯。
+    \item \textbf{技术架构：}Fastify 服务端 + 微信 / 飞书双渠道消息网关（RabbitMQ + WebSocket 长连接）；入站 41.6\% 为图片消息，退款链路以截图 OCR 提取商户单号 → CMS 接口对接 → 结果回执；Orchestrator 调度可插拔多 Agent 后端（Claude Code / Kimi / OpenCode SDK）；通过 MCP 挂载业务工具；知识库 100+ 篇文档，按群聊作用域做知识隔离。
+\end{itemize}}
 
 \section{工作经历}
-\cventry{2026.01--至今}{AI 应用开发工程师（小米总部驻场）}{北京雷石天地电子技术股份有限公司 / AI 团队}{北京}{}{
+\cventry{2026.01--2026.08}{AI 应用开发工程师（小米总部驻场）}{北京雷石天地电子技术股份有限公司 / AI 团队}{北京}{}{
 \begin{itemize}
-    \item 主力开发企业级 AI 客服 Agent 平台「小雷」（TypeScript / Node.js + Fastify）：微信 + 飞书双渠道消息网关（RabbitMQ + WebSocket 长连接），Orchestrator 调度可插拔多 Agent 后端（Claude Code / Kimi / OpenCode SDK），通过 MCP 挂载业务工具，配套知识库系统（100+ 篇文档）与按群聊作用域的知识隔离；已投产承接 VOD 产品线技术支持——持续运行 4 个多月，覆盖 24 个业务群 / 300+ 用户，累计处理咨询消息 2.8 万+ 条、自动应答近 5,000 条（近 30 天日均入站 400+）；8,700+ 次应答决策中 95\% 判定"无需介入"——把群聊 Agent 的克制做成产品能力，全链路审计留痕（4.6 万+ 审计事件）。
-    \item 从 0 到 1 交付 VOD 自动退款 Agent（微信消息采集 → OCR 提取订单号 → CMS 接口对接 → 飞书告警），已投产替代人工退款流程；工程化踩坑沉淀：并发锁防双倍退款、已退款订单幂等判断、异常容错重试。
-    \item 深度参与 KTV ERP 多端产品矩阵开发——客用小程序、掌柜端小程序（uni-app + Vue3）为主力，兼及收银端 / 包厢 Pad、财务报表系统、SaaS 管理后台（Vue3）与 Go 后端，交付自助预约、扫码开台、卡券核销、超时自动关台等完整业务闭环；攻克跨端数据一致性问题（预约时段冲突、session 状态漂移），抽象为状态机模型在领域服务层统一修复。
-    \item 深入 Go DDD 四层架构后端（规则引擎 / 流程引擎），承担订单、预约、会员等核心交易链路的常规迭代（270+ commits），配套单元测试与集成测试。
-    \item 为客用端 / 掌柜端建立 Playwright e2e 自动化验收体系（40+ 场景、60+ 用例）：真实 H5 UI 驱动 + MySQL 状态断言，覆盖预约、开台、换房、权限等核心链路，作为发版闸门替代人工回归；日常开发全面接入 Claude Code，以 CLAUDE.md 规范沉淀代码库上下文与团队踩坑经验。
+    \item \textbf{主力开发 AI 客服 Agent 平台「小雷」}（详见上方核心项目）。
+    \item \textbf{VOD 自动退款 Agent——从 0 到 1 交付并投产，替代人工退款流程。}链路：微信消息采集 → OCR 提取订单号 → CMS 接口对接 → 飞书告警；工程化沉淀：并发锁防双倍退款、已退款订单幂等判断（实测拦截 217 次重复退款）、异常容错重试。
+    \item \textbf{主导 KTV ERP 客用小程序开发——385 / 1,262 次提交，18 人协作仓库中占比 30.5\% 居首。}uni-app + Vue3，交付自助预约、扫码开台、卡券核销、超时自动关台等完整业务闭环；建立 Playwright e2e 验收体系（40+ 场景 / 60+ 用例，真实 H5 UI 驱动 + MySQL 状态断言）作为发版闸门替代人工回归；另兼及掌柜端小程序、收银端 / 包厢 Pad、财务报表系统与 SaaS 管理后台。
+    \item \textbf{节假日价格方案优先级与回退链——在 DDD 领域层实现 6 类价格方案（买断 / 自助 / 自助时段 / 时段折扣 / 时段价 / 房型时段价）叠加节假日、会员、渠道维度的取价优先级。}修复买断价格校验的 areaId 跨方案泄漏、拒绝客户端覆写节假日价、价格校验改用实际计费区域；配套回退顺序与价格来源的单元测试，保证降级路径可验证。
+    \item \textbf{门店装修模块安全与并发加固：修复接口水平越权与超管模板归属篡改，保存 / 发布加乐观锁防并发覆盖。}新增 206 行测试覆盖越权场景与服务层逻辑；支持平台默认模板种子化、装修配置兜底读取与线上配置恢复到草稿。
+    \item \textbf{Go DDD 四层架构后端——289 次提交，触碰 236 个文件（含 46 个测试文件）。}承担订单、预约、会员等核心交易链路迭代；主导跨端数据一致性治理：将 session\_user 身份标识从 openid 统一迁移至手机号（此前客用小程序与掌柜端按不同标识识别同一客户），修复 sessionVO 索引 key 错配导致的订单串台与商品数量重复；预约侧支持按时间段查询并标记冲突包间。日常开发全面接入 Claude Code，以 CLAUDE.md 规范沉淀代码库上下文与团队踩坑经验。
 \end{itemize}}
 
 \cventry{2025.07--2025.09}{全栈工程师（实习）}{北京顺为知一科技有限公司}{北京}{}{
 \begin{itemize}
-    \item 负责企业级微信销售助手平台全栈开发（FastAPI + Next.js），支持多微信账号统一接入、自动化消息处理与客户标签体系；通信层基于开源 wxauto 库扩展开发。
-    \item 将 AI 能力（智能对话、内容摘要、自动标签）下沉到 Dify / Coze / n8n 工作流，后端仅保留调度与审计，使运营侧可自主迭代 Prompt 而无需后端发版。
+    \item \textbf{独立负责企业级微信销售助手平台全栈开发}（FastAPI + Next.js）：多微信账号统一接入、自动化消息处理与客户标签体系；通信层基于开源 wxauto 库扩展开发。
+    \item \textbf{把 AI 能力下沉到工作流，使运营侧可自主迭代 Prompt 而无需后端发版}——智能对话、内容摘要、自动标签交由 Dify / Coze / n8n 编排，后端仅保留调度与审计。
     \item RabbitMQ + WebSocket 构建实时消息推送链路，支撑多账号并发场景。
 \end{itemize}}
 
-\newpage
 \section{开源项目}
-\cventry{2024.09--至今}{voice-input-method — Linux 离线语音输入法}{\textnormal{GitHub \textbf{29} stars \textperiodcentered{} 9 forks}}{Python}{}{
+\cventry{2024.09--至今}{voice-input-method — Linux 离线语音输入法}{\textnormal{GitHub \textbf{29} stars \textperiodcentered{} 9 forks \textperiodcentered{} 核心方案已申请发明专利}}{Python}{}{
 \begin{itemize}
-    \item 基于 FunASR / SherpaOnnx + PySide6 的跨平台离线语音输入工具，响应延迟 \textless{} 1s，支持 X11 / Wayland 双协议与运行时麦克风切换；核心方案（常驻音频流消除录音启动延迟 + 内存/磁盘双写 + 二遍识别）已申请发明专利。
-    \item Protocol-based 依赖注入架构（GUI → factory → engine → protocols → implementations），核心逻辑不依赖硬件即可 mock 测试。配套 CLAUDE.md 规范使 AI Agent 可直接接管代码库——新贡献者（人或 AI）无需口头说明即可上手开发。
+    \item \textbf{响应延迟 \textless{} 1s 的跨平台离线语音输入工具}（FunASR / SherpaOnnx + PySide6），支持 X11 / Wayland 双协议与运行时麦克风切换。核心方案——常驻音频流消除录音启动延迟 + 内存/磁盘双写 + 二遍识别——已申请发明专利。
+    \item \textbf{Protocol-based 依赖注入架构，核心逻辑不依赖硬件即可 mock 测试}（GUI → factory → engine → protocols → implementations）。配套 CLAUDE.md 规范使 AI Agent 可直接接管代码库——新贡献者（人或 AI）无需口头说明即可上手开发。
 \end{itemize}}
 
 \cventry{2026.02--至今}{mc-intelligence — 让 AI Agent 在 Minecraft 里实时建造}{\textnormal{NeoForge mod + CLI + MCP（前身 minecraft-builder Skill, GitHub 7 stars）}}{Java / Python}{}{
 \begin{itemize}
-    \item 设计理念：不是"用 AI 写代码"，而是"为 AI 设计可安全调用的工具"。从离线存档工具演进为实时运行环境：NeoForge mod 内嵌 HTTP 服务器暴露建造原语，配套 CLI 与 MCP 接口，AI Agent 可在游戏运行中零人工干预完成地形 / 建筑 / 家具生成；将 LLM 高频幻觉点（块名拼写、坐标越界、存档损坏）内置到防御层，配套 CLAUDE.md + SKILL.md 规范与 CI 覆盖率门禁。
+    \item \textbf{AI Agent 可在游戏运行中零人工干预完成地形 / 建筑 / 家具生成。}NeoForge mod 内嵌 HTTP 服务器暴露建造原语，配套 CLI 与 MCP 接口；从离线存档工具演进为实时运行环境。
+    \item \textbf{设计理念：不是"用 AI 写代码"，而是"为 AI 设计可安全调用的工具"。}将 LLM 高频幻觉点（块名拼写、坐标越界、存档损坏）内置到防御层，配套 CLAUDE.md + SKILL.md 规范与 CI 覆盖率门禁。
 \end{itemize}}
 
 \section{项目经历}
-\cventry{2026.03--至今}{观澜 — 黄金交易分析 Claude Code Skill}{\textnormal{412 行结构化规范 \textperiodcentered{} AI Agent 决策工程化}}{}{}{
-\begin{itemize}
-    \item 核心命题：如何让 LLM 在高风险领域（金融）输出可信结论？设计四层递进分析框架（周期定阶段 → 宏观定方向 → 中观定节奏 → 微观定点位），将交易专家认知系统化为 AI Agent 可执行的决策规范，附优先级铁律：上层逻辑 > 下层信号，矛盾时必须解释数据依据。
-    \item 工程化约束 AI 幻觉：制定"数据锚点原则"——每个结论必须挂钩数据源 + 具体值 + 时间戳（三位一体），禁止无数据支撑的判断性形容词；设计八因子量化评分表（$-$16 到 $+$16）集成 FRED / yfinance / CFTC COT 等多源数据，并构建中观六维信号交叉验证矩阵（COMEX 持仓 + ETF 流向 + 央行购金 + 交割博弈 + 波动率 + 期权），用组合模式替代单一信号判断。
-\end{itemize}}
-
-\cventry{2023--2024}{网易我的世界高铁模组}{\textnormal{累计下载 \textbf{10,000+}}}{python}{}{
-\begin{itemize}
-    \item 与同学组队开发网易我的世界高铁模组，负责核心功能开发与模组架构设计；发布至网易我的世界模组平台后持续维护迭代，累计下载量突破 10,000 次，累计营收突破 100,000 元。
-\end{itemize}}
-
 \cventry{2025.09--2026.01}{技术负责人 — 跨境短剧 AIGC 系统}{映乾（3 人创业团队，负责全部技术架构与 AI 工作流）}{}{}{
 \begin{itemize}
-    \item 主导技术选型与系统架构设计：Sora2 API + Dify 流式剧本编排 + Celery + Redis 异步任务链路（FastAPI + Vue3 + PostgreSQL + Docker）；设计角色镜头截取机制，解决多段 AI 生成视频的角色一致性问题。
-    \item 独立搭建翻译配音全自动链路：Demucs v4 人声分离 → VieNeu-TTS / Index-TTS 音色克隆 → OCR / FunASR 双路字幕识别，实现上传到成片全流程无人工干预，单集处理耗时从人工 4h+ 降至自动 20min。
+    \item \textbf{单集处理耗时从人工 4h+ 降至自动 20min，上传到成片全流程无人工干预。}独立搭建翻译配音链路：Demucs v4 人声分离 → VieNeu-TTS / Index-TTS 音色克隆 → OCR / FunASR 双路字幕识别。
+    \item \textbf{主导技术选型与系统架构设计：}Sora2 API + Dify 流式剧本编排 + Celery + Redis 异步任务链路（FastAPI + Vue3 + PostgreSQL + Docker）；设计角色镜头截取机制，解决多段 AI 生成视频的角色一致性问题。
+\end{itemize}}
+
+\cventry{2026.03--至今}{观澜 — 黄金交易分析 Claude Code Skill}{\textnormal{412 行结构化规范 \textperiodcentered{} AI Agent 决策工程化}}{}{}{
+\begin{itemize}
+    \item \textbf{核心命题：如何让 LLM 在高风险领域（金融）输出可信结论？}设计四层递进分析框架（周期定阶段 → 宏观定方向 → 中观定节奏 → 微观定点位），将交易专家认知系统化为 AI Agent 可执行的决策规范，附优先级铁律：上层逻辑 \textgreater{} 下层信号，矛盾时必须解释数据依据。
+    \item \textbf{以工程化手段约束 AI 幻觉：}制定"数据锚点原则"——每个结论必须挂钩数据源 + 具体值 + 时间戳（三位一体），禁止无数据支撑的判断性形容词；设计八因子量化评分表（$-$16 到 $+$16）集成 FRED / yfinance / CFTC COT 等多源数据，并构建中观六维信号交叉验证矩阵（COMEX 持仓 + ETF 流向 + 央行购金 + 交割博弈 + 波动率 + 期权）。
+\end{itemize}}
+
+\cventry{2023--2024}{网易我的世界高铁模组}{\textnormal{累计下载 \textbf{10,000+} \textperiodcentered{} 累计营收 \textbf{100,000+} 元}}{Python}{}{
+\begin{itemize}
+    \item 与同学组队开发，负责核心功能开发与模组架构设计；发布至网易我的世界模组平台后持续维护迭代。
 \end{itemize}}
 
 \section{专利、竞赛与荣誉}
@@ -89,5 +95,8 @@
 \cvitem{2025.10}{第十届中国国际大学生创新大赛 区级铜奖（队长）}
 \cvitem{2025.06}{第十二届"挑战杯"广西大学生课外学术科技作品竞赛 一等奖（队长）}
 \cvitem{2023.06}{大学生创新创业项目 国家级立项（负责人）}
+
+\section{教育背景}
+\cventry{2022--2026}{本科}{广西外国语学院}{计算机科学与技术}{}{}
 
 \end{document}
